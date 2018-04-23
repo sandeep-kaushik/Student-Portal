@@ -1,0 +1,450 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block container %}
+<div id="page_content_inner">
+            <div class="uk-grid" data-uk-grid-margin data-uk-grid-match id="user_profile">
+                <div class="uk-width-large--10">
+                    <div class="md-card">
+                        <div class="user_heading">
+                            <div class="user_heading_menu" data-uk-dropdown>
+                                <i class="md-icon material-icons md-icon-light">&#xE5D4;</i>
+                                <div class="uk-dropdown uk-dropdown-flip uk-dropdown-small">
+                                    <ul class="uk-nav">
+                                        <li><a href="#">Action 1</a></li>
+                                        <li><a href="#">Action 2</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="user_heading_avatar">
+                                <img src="{% static 'assets/img/avatars/avatar_11.png' %}" alt="user avatar"/>
+                            </div>
+                            <div class="user_heading_content">
+                                <h2 class="heading_b uk-margin-bottom"><span class="uk-text-truncate">{{user.first_name}}</span><span class="sub-heading">JAVA Developer</span></h2>
+                                <ul class="user_stats">
+                                    <li>
+                                        <h4 class="heading_a">71% <span class="sub-heading">Percentage</span></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="heading_a">8 <span class="sub-heading">Accomplishments</span></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="heading_a">4 <span class="sub-heading">Internships</span></h4>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="md-fab md-fab-small md-fab-accent" href="/account/profile/edit">
+                                <i class="material-icons">&#xE150;</i>
+                            </a>
+                        </div>
+                        <div class="user_content">
+                            <ul id="user_profile_tabs" class="uk-tab" data-uk-tab="{connect:'#user_profile_tabs_content', animation:'slide-horizontal'}">
+                                <li class="uk-active"><a href="#">&nbsp&nbspAbout&nbsp&nbsp&nbsp</a></li>
+                                <li><a href="#">&nbsp&nbspDocuments&nbsp&nbsp</a></li>
+                                <li><a href="#">Academic Details</a></li>
+                                <li><a href="#">Accomplishments</a></li>
+                            </ul>
+                            <ul id="user_profile_tabs_content" class="uk-switcher uk-margin">
+                                <li>
+                                                         
+                                    <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Contact Info</h4>
+                                            <ul class="md-list md-list-addon">
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.email}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Email</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.userprofile.phone}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Phone</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-facebook-official"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.userprofile.website}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Facebook</span>
+                                                    </div>
+                                                </li>
+                                                    <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-twitter"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">twitter.com/nhi h twitter p account :p</span>
+                                                        <span class="uk-text-small uk-text-muted">Twitter</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Details</h4>
+                                            <ul class="md-list">
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">165468461</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Roll no</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">1418380217</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Registration no.</span>
+                                                    </div>
+                                                    </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">COMPUTER SCIENCE</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Stream</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">UNIVERSITY INSTITUTE OF ENGINEERING AND TECHNOLOGY</a></span>
+                                                        <span class="uk-text-small uk-text-muted">College</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h4 class="heading_c uk-margin-bottom">Timeline</h4>
+                                    <div class="timeline">
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                09 <span>Jul</span>
+                                            </div>
+                                            <div class="timeline_content">Submitted Project <a href="#"><strong>UIET Training Portal</strong></a></div>
+                                        </div>
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_danger"><i class="material-icons">&#xE5CD;</i></div>
+                                            <div class="timeline_date">
+                                                15 <span>Jul</span>
+                                            </div>
+                                            <div class="timeline_content">Deleted post <a href="#"><strong>Consectetur perferendis sapiente ipsum corporis culpa ut.</strong></a></div>
+                                        </div>
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon"><i class="material-icons">&#xE410;</i></div>
+                                            <div class="timeline_date">
+                                                19 <span>Jul</span>
+                                            </div>
+                                            <div class="timeline_content">
+                                                Added photo
+                                                <div class="timeline_content_addon">
+                                                    <img src="{% static 'assets/img/gallery/Image16.jpg' %}" alt=""/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_primary"><i class="material-icons">&#xE0B9;</i></div>
+                                            <div class="timeline_date">
+                                                21 <span>Jul</span>
+                                            </div>
+                                            <div class="timeline_content">
+                                                New comment on post <a href="#"><strong>Assumenda distinctio et eos autem.</strong></a>
+                                                <div class="timeline_content_addon">
+                                                    <blockquote>
+                                                        Iure vel distinctio excepturi dolor consectetur quidem voluptatibus est maiores quod numquam id est rerum odit est quis nostrum dicta minima tempore voluptas soluta nulla.&hellip;
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_warning"><i class="material-icons">&#xE7FE;</i></div>
+                                            <div class="timeline_date">
+                                                29 <span>Jul</span>
+                                            </div>
+                                            <div class="timeline_content">
+                                                Added to Friends
+                                                <div class="timeline_content_addon">
+                                                    <ul class="md-list md-list-addon">
+                                                        <li>
+                                                            <div class="md-list-addon-element">
+                                                                <img class="md-user-image md-list-addon-avatar" src="{% static 'assets/img/avatars/avatar_02_tn.png' %}" alt=""/>
+                                                            </div>
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading">Charlene Toy</span>
+                                                                <span class="uk-text-small uk-text-muted">Nesciunt nulla nemo placeat unde.</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                    <li>
+             <div class="md-card">
+                <div class="md-card-content">
+                    <h3 class="heading_a">
+                        Upload Component
+                        <span class="sub-heading">Allow users to upload files through a file input form element or a placeholder area.</span>
+                    </h3>
+                    <div class="uk-grid">
+                        <div class="uk-width-1-1">
+                            <div id="file_upload-drop" class="uk-file-upload">
+                                <p class="uk-text">Drop file to upload</p>
+                                <p class="uk-text-muted uk-text-small uk-margin-small-bottom">or</p>
+                                <a class="uk-form-file md-btn">choose file<input id="file_upload-select" type="file"></a>
+                            </div>
+                            <div id="file_upload-progressbar" class="uk-progress uk-hidden">
+                                <div class="uk-progress-bar" style="width:0">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div id="user_profile_gallery" data-uk-check-display class="uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4" data-uk-grid="{gutter: 4}">
+                                        <div >
+                                            <a href="mmm.png">
+                                                <img src="mmm.png" alt="jhg"/>
+                                            </a>
+                                           
+                                        </div>
+                    </div>
+                                    
+          </div>              </li>
+                                    <li>
+                                                                       
+                                    <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Details</h4>
+                                            <ul class="md-list">
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">10</a></span>
+                                                        <span class="uk-text-small uk-text-muted">CGPA</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">84</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Class X %</span>
+                                                    </div>
+                                                    </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">84</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Class Xll %</span>
+                                                    </div>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom"></h4>
+                                            <ul class="md-list">
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">2018</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Graduation Year</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">78</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Graduation Percentage</span>
+                                                    </div>
+                                                    </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">COMPUTER SCIENCE</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Graduation steram</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">UNIVERSITY INSTITUTE OF ENGINEERING AND TECHNOLOGY</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Graduation University</span>
+                                                    </div>
+                                                </li> 
+                                            </ul>
+                                        </div>
+                                    </div> 
+                                        <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                        <div class="uk-width-large-5-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Other Details</h4>
+                                            <ul class="md-list">
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">gjksjkk</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Specialisation</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">dbskss</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Experience</span>
+                                                    </div>
+                                                    </li>
+                                                <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">sahdhhmfkkll</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Address</span>
+                                                    </div>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                <div class="uk-grid">
+                                  <div class="uk-width-large-1-3">
+                                    <h4 class="heading_c uk-margin-bottom">Performance Statistics</h4>
+                                    <div class="timeline">
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                1 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content"><strong>73</strong></div>
+                                        </div>
+                                        
+
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                2 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content">74</div>
+                                        </div>
+
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                3 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content">75</div>
+                                        </div>
+
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                4 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content">78</div>
+                                        </div>
+
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                5 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content">80</div>
+                                        </div>
+
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                6 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content">76</div>
+                                        </div>
+
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                7 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content">76</div>
+                                        </div>
+                                        <div class="timeline_item">
+                                            <div class="timeline_icon timeline_icon_success"><i class="material-icons">&#xE85D;</i></div>
+                                            <div class="timeline_date">
+                                                8 <span>sem.</span>
+                                            </div>
+                                            <div class="timeline_content">79</div>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                        <div class="uk-width-large-1-2">
+                                            <ul class="md-list">
+                                                  <li>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="#">78</a></span>
+                                                        <span class="uk-text-small uk-text-muted"><h2>Average Percentage</h2></span>
+                                                    </div>
+                                                    </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </li>
+                                    <li>
+                                    <ul class="md-list">
+                                        <li>
+                                            <div class="md-list-content">
+                                                <span class="md-list-heading"><a href="#">i did this.</a></span>
+                                                <div class="uk-margin-small-top">
+                                                <span class="uk-margin-right">
+                                                    <i class="material-icons">&#xE192;</i> <span class="uk-text-muted uk-text-small">on date this</span>
+                                                </span>
+                                                
+                                                </div>
+                                            </div>
+                                        </li>
+                                      
+                                        <li>
+                                            <div class="md-list-content">
+                                                <span class="md-list-heading"><a href="#">Eos deserunt in consequuntur sapiente quam iste.</a></span>
+                                                <div class="uk-margin-small-top">
+                                                <span class="uk-margin-right">
+                                                    <i class="material-icons">&#xE192;</i> <span class="uk-text-muted uk-text-small">22 Jul 2015</span>
+                                                </span>
+                                                <span class="uk-margin-right">
+                                                    <i class="material-icons">&#xE0B9;</i> <span class="uk-text-muted uk-text-small">23</span>
+                                                </span>
+                                                <span class="uk-margin-right">
+                                                    <i class="material-icons">&#xE417;</i> <span class="uk-text-muted uk-text-small">802</span>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="md-list-content">
+                                                <span class="md-list-heading"><a href="#">Reiciendis officia ut accusamus aut necessitatibus voluptatem.</a></span>
+                                                <div class="uk-margin-small-top">
+                                                <span class="uk-margin-right">
+                                                    <i class="material-icons">&#xE192;</i> <span class="uk-text-muted uk-text-small">13 Jul 2015</span>
+                                                </span>
+                                                <span class="uk-margin-right">
+                                                    <i class="material-icons">&#xE0B9;</i> <span class="uk-text-muted uk-text-small">21</span>
+                                                </span>
+                                                <span class="uk-margin-right">
+                                                    <i class="material-icons">&#xE417;</i> <span class="uk-text-muted uk-text-small">345</span>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<h1> profile</h1> <a href="edit/">Edit Profile</a>
+ <br><a href="/account/change-password">change password</a><br>
+user name{{user.username}}
+first name :{{user.first_name}}
+last name :{{user.last_name}}
+{% endblock %}

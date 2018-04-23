@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+			'username',
+			'first_name',
+			'last_name',
+			'email',
+			'password1',
+			'password2',
+
+
+
+{% block container %}
+<div id="page_content_inner">
+    <div class="uk-width-large-4-10 uk-container-center">
+        <div><h1>Register</h1></div>
+        <div class="md-card">
+
+            <div class="md-card-content">
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="uk-width-medium-1-1">
+                    	{{ form.non_field_errors }}
+                            <form method="POST" id="form_validation" class="uk-form-stacked">{% csrf_token %}
+                                 
+                                <div class="uk-form-row">
+                                	{{ form.username.errors }}
+                                    <label for="{{form.username.id_for_label}">user name<span class="req">*</span></label>
+                                    <input type="text" name="{{ form.username.html_name }}" required class="md-input" value=""/>
+                                </div> 
+                                <div class="uk-form-row">
+                                	{{ form.first_name.errors }}
+                                    <label for="{{form.first_name.id_for_label}">first name<span class="req">*</span></label>
+                                    <input type="text" name="{{ form.first_name.html_name }}" required class="md-input" value=""/>
+                                </div>
+                                <div class="uk-form-row">
+                                	{{ form.last_name.errors }}
+                                    <label for="{{form.last_name.id_for_label}">last name<span class="req">*</span></label>
+                                    <input type="text" name="{{ form.last_name.html_name }}" required class="md-input" value=""/>
+                                </div>
+                                <div class="uk-form-row">
+                                	{{ form.email.errors }}
+                                    <label for="{{form.email.id_for_label}">email<span class="req">*</span></label>
+                                    <input type="text" name="{{ form.email.html_name }}" required class="md-input" value=""/>
+                                </div>
+                                <div class="uk-form-row">
+                                	{{ form.password1.errors }}
+                                    <label for="{{form.password1.id_for_label}">password<span class="req">*</span></label>
+                                    <input type="password" name="{{ form.password1.html_name }}" required class="md-input" value=""/>
+                                </div>
+                                <div class="uk-form-row">
+                                	{{ form.password2.errors }}
+                                    <label for="{{form.password2.id_for_label}">confirm password<span class="req">*</span></label>
+                                    <input type="password" name="{{ form.password2.html_name }}" required class="md-input" value=""/>
+                                </div>
+                                
+        
+                                <div class="uk-form-row ">
+                                    <button type="submit" class="md-btn md-btn-primary">Submit</button>
+                                   
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+     </div>
+{% endblock %}

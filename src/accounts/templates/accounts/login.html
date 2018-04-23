@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block container %}
+<div id="page_content_inner">
+    <div class="uk-width-large-4-10 uk-container-center">
+        <div><h1>Login</h1></div>
+        <div class="md-card">
+
+            <div class="md-card-content">
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="uk-width-medium-1-1">
+                        {{ form.non_field_errors }}
+                            <form method="POST" id="form_validation" class="uk-form-stacked">{% csrf_token %}
+                              
+                                <div class="uk-form-row">
+                                    {{ form.username.errors }}
+                                    <label for="{{form.username.id_for_label}">username<span class="req">*</span></label>
+                                    <input type="text" name="{{ form.username.html_name }}" required class="md-input" value=""/>
+                                </div>
+                                <div class="uk-form-row">
+
+                                    <label for="{{form.password.id_for_label}">Password<span class="req">*</span></label>
+                                    <input type="password" name="{{ form.password.html_name }}" required class="md-input" id="myInput" value=""/>
+                                    
+                                    <input type="checkbox" onclick="myFunction()">
+                                    <span>Show Password</span>
+                                    {{ form.password.errors }}
+                                </div>
+                                
+        
+                                <div class="uk-form-row ">
+                                    <button type="submit" class="md-btn md-btn-primary">Login</button>
+                                    <a href="/account/register">Sign Up</a>
+                                    <br>
+                                    <a href="/account/reset-password">Forget Password</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+     </div>
+     <script>
+          function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+     </script>
+
+       
+{% endblock %}

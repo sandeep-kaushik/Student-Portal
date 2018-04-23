@@ -1,0 +1,245 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+{% block html %}
+<html lang="en">
+
+    {% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="icon" type="image/png" href="{% static 'assets/img/favicon-16x16.png' %}" sizes="16x16">
+        <link rel="icon" type="image/png" href="{% static 'assets/img/favicon-32x32.png' %}" sizes="32x32">
+    
+        {% block title %}{% endblock %}
+
+        <!-- uikit -->
+        <link rel="stylesheet" href="{% static 'bower_components/uikit/css/uikit.almost-flat.min.css' %}" media="all">
+
+        <!-- flag icons -->
+        <link rel="stylesheet" href="{% static 'assets/icons/flags/flags.min.css' %}" media="all">
+
+        <!-- altair admin -->
+        <link rel="stylesheet" href="{% static 'assets/css/main.min.css' %}" media="all">
+        {% block extra_css %}{% endblock %}
+    </head>
+    {% endblock %}
+
+    {% block body %}
+    <body>
+        {% block nav %}
+        <header id="header_main" style="width: fill-available">
+        <div class="header_main_content">
+            <nav class="uk-navbar">
+                <!-- main sidebar switch -->
+                <a href="#"  class="sSwitch sSwitch_left">
+                    <span class="sSwitchIcon"></span>
+                </a>
+              
+                <div class="uk-navbar-flip">
+                    <ul class="uk-navbar-nav user_actions">
+                        <li><a href="#" id="main_search_btn" class="user_action_icon"><i class="material-icons md-24 md-light">&#xE8B6;</i></a></li>
+                        <li data-uk-dropdown="{mode:'click'}" class="uk-hidden-small">
+                            <a href="#" class="user_action_icon"><i class="material-icons md-24 md-light">&#xE0BE;</i><span class="uk-badge">12</span></a>
+                            <div class="uk-dropdown uk-dropdown-xlarge uk-dropdown-flip uk-dropdown-scrollable">
+                                <ul class="md-list md-list-addon">
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <span class="md-user-letters md-bg-cyan">mf</span>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading"><a href="pages_mailbox.html">Accusantium autem.</a></span>
+                                            <span class="uk-text-small uk-text-muted">Vel eos odio in dolorem eveniet dignissimos rerum quia impedit et.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <img class="md-user-image md-list-addon-avatar" src="{% static 'assets/img/avatars/avatar_07_tn.png' %}" alt=""/>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading"><a href="pages_mailbox.html">Eum sapiente.</a></span>
+                                            <span class="uk-text-small uk-text-muted">Unde esse a qui a et.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <span class="md-user-letters md-bg-light-green">fh</span>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading"><a href="pages_mailbox.html">Quis provident.</a></span>
+                                            <span class="uk-text-small uk-text-muted">Ipsa eum rerum et commodi qui et dignissimos.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <img class="md-user-image md-list-addon-avatar" src="{% static 'assets/img/avatars/avatar_02_tn.png' %}" alt=""/>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading"><a href="pages_mailbox.html">Vero aperiam.</a></span>
+                                            <span class="uk-text-small uk-text-muted">Odio eius eligendi molestiae maiores cum ea.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <img class="md-user-image md-list-addon-avatar" src="{% static 'assets/img/avatars/avatar_09_tn.png' %}" alt=""/>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading"><a href="pages_mailbox.html">Ea harum debitis.</a></span>
+                                            <span class="uk-text-small uk-text-muted">Modi nobis nobis illo quia architecto ut placeat ad et.</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="page_mailbox.html" class="md-btn md-btn-flat md-btn-flat-primary md-btn-block js-uk-prevent uk-margin-small-top">Show All</a>
+                            </div>
+                        </li>
+                        <li data-uk-dropdown="{mode:'click'}">
+                            <a href="#" class="user_action_icon"><i class="material-icons md-24 md-light">&#xE7F4;</i><span class="uk-badge">4</span></a>
+                            <div class="uk-dropdown uk-dropdown-xlarge uk-dropdown-flip uk-dropdown-scrollable">
+                                <ul class="md-list md-list-addon">
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <i class="md-list-addon-icon material-icons uk-text-warning">&#xE8B2;</i>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading">In dolores.</span>
+                                            <span class="uk-text-small uk-text-muted uk-text-truncate">Est nemo sit ut eos odit unde possimus.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <i class="md-list-addon-icon material-icons uk-text-success">&#xE88F;</i>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading">Et saepe doloremque.</span>
+                                            <span class="uk-text-small uk-text-muted uk-text-truncate">Ex aut voluptatem quos.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <i class="md-list-addon-icon material-icons uk-text-danger">&#xE001;</i>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading">Ut aliquid.</span>
+                                            <span class="uk-text-small uk-text-muted uk-text-truncate">Eligendi et dolorum eius dolores reiciendis molestias dolor.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="md-list-addon-element">
+                                            <i class="md-list-addon-icon material-icons uk-text-primary">&#xE8FD;</i>
+                                        </div>
+                                        <div class="md-list-content">
+                                            <span class="md-list-heading">Consectetur voluptatibus quibusdam.</span>
+                                            <span class="uk-text-small uk-text-muted uk-text-truncate">Laudantium iste ea quam iure.</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li data-uk-dropdown="{mode:'click'}">
+                            <a href="#" class="user_action_image"><img class="md-user-image" src="{% static 'assets/img/avatars/avatar_11_tn.png' %}" alt=""/></a>
+                            <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip">
+                                {% if user.is_authenticated %}
+                                <ul class="uk-nav js-uk-prevent">
+                                    
+                                    <li><a href="{% url 'accounts:view_profile'%}">Profile</a></li>
+                                    <li><a href="{% url 'accounts:edit_profile'%}">Edit_profile</a></li>
+                                    <li><a href="{% url 'accounts:change_password'%}">Change password</a></li>
+                                    <li><a href="{% url 'accounts:logout'%}">Logout</a></li>
+
+                                </ul>
+                                {% else %}
+                                <ul class="uk-nav js-uk-prevent">
+                                    
+                                    <li><a href="{% url 'accounts:login'%}">login</a></li>
+                                    <li><a href="{% url 'accounts:register'%}">register</a></li>
+                                    
+
+                                </ul>
+                                {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header_main_search_form">
+            <i class="md-icon header_main_search_close material-icons">&#xE5CD;</i>
+            <form class="uk-form">
+                <input type="text" class="header_main_search_input" />
+                <button class="header_main_search_btn uk-button-link"><i class="md-icon material-icons">&#xE8B6;</i></button>
+            </form>
+        </div>
+    </header><!-- main header end -->
+        {% endblock %}
+
+        
+        {% block navbar_after %}{% endblock %}
+
+        {% block body_content %}
+            <div id="page_content">
+                {% block container %}{% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block foot %}
+            <footer>
+                {% block footer %}{% endblock %}
+            </footer>
+        {% endblock %}
+
+        <!-- google web fonts -->
+    <script>
+        WebFontConfig = {
+            google: {
+                families: [
+                    'Source+Code+Pro:400,700:latin',
+                    'Roboto:400,300,500,700,400italic:latin'
+                ]
+            }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <!-- momentJS date library -->
+    <script src="{% static 'bower_components/moment/min/moment.min.js' %}"></script>
+
+    <!-- common functions -->
+    <script src="{% static 'assets/js/common.min.js' %}"></script>
+    <!-- uikit functions -->
+    <script src="{% static 'assets/js/uikit_custom.min.js' %}"></script>
+    <!-- altair common functions/helpers -->
+    <script src="{% static 'assets/js/altair_admin_common.min.js' %}"></script>
+
+    <!-- page specific plugins -->
+    <!-- magnific popup -->
+    <script src="{% static 'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+
+    <!--  user profile functions -->
+    <script src="{% static 'assets/js/pages/page_user_profile.min.js' %}"></script>
+     <!--  forms_file_upload functions -->
+    <script src="{% static 'assets/js/pages/forms_file_upload.min.js' %}"></script>
+    
+    <!-- enable hires images -->
+    <script>
+        $(function() {
+            altair_helpers.retina_images();
+        });
+    </script>
+        {% block extra_js %}{% endblock %}
+
+    </body>
+    {% endblock %}
+
+</html>
+{% endblock %}
